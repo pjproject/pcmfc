@@ -42,9 +42,6 @@ protected:
 	afx_msg void OnDestroy();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
-
-protected:
-	PeercastInstance* m_pPeercastInst;
 };
 
 //{{AFX_INSERT_LOCATION}}

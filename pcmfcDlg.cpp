@@ -5,6 +5,7 @@
 #include "pcmfc.h"
 #include "pcmfcDlg.h"
 #include "WinPeercastInstance.h"
+#include "WinPeercastApplication.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -118,7 +119,10 @@ BOOL CPcmfcDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
-	m_pPeercastInst = new CWinPeercastInstance;
+	peercastInst = new CWinPeercastInstance;
+	peercastApp = new CWinPeercastApplication;
+
+	peercastInst->init();
 	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -177,6 +181,7 @@ void CPcmfcDlg::OnDestroy()
 	CDialog::OnDestroy();
 	
 	// TODO: Add your message handler code here
-	delete m_pPeercastInst;
+	delete peercastApp;
+	delete peercastInst;
 	
 }
